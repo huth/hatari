@@ -11,7 +11,7 @@ addons:
       - imagemagick
 
 before_script:
-  - ./configure ${CONFIG}
+  - CFLAGS="-D_FORTIFY_SOURCE=3" ./configure ${CONFIG}
 script:
   - make -j3 && ctest -j2
 
